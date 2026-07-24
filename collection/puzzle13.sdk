@@ -1,0 +1,16 @@
+#C case 13  - Cleve Moler
+#C Structural symmetry.
+#C Gordon Royle, University of Western Australia.
+#C http://people.csse.uwa.edu.au/gordon/sudoku/sudoku-symmetry.pdf
+020030040
+600000003
+004000500
+000806000
+800010006
+000705000
+007000600
+400000008
+030040020
+
+
+

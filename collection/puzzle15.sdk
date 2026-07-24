@@ -1,0 +1,14 @@
+#C case 15  - Cleve Moler
+# Structural symmetry and only 17 nonzero initial entries.
+# Gordon Royle, University of Western Australia.
+# http://people.csse.uwa.edu.au/gordon/sudoku/sudoku-symmetry.pdf
+000000000
+000000012
+003045000
+000601070
+004000600
+005800000
+000030400
+010200000
+070000000
+

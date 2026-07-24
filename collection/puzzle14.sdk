@@ -1,0 +1,14 @@
+#C case 14  - Cleve Moler
+#C Very close to matrix symmetry, and very difficult.
+#C Gordon Royle, University of Western Australia.
+#C http://people.csse.uwa.edu.au/gordon/sudoku/sudoku-symmetry.pdf
+600000003
+070080090
+002000500
+000300000
+080010070
+000002000
+005000100
+090040080
+300000002
+
