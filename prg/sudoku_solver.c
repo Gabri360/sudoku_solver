@@ -8,19 +8,19 @@ int main()
     int sdk[9][9];
     while(1)
     {
-        printf("Inserisci il sudoku da risolvere (1-34)\n");
+        printf("Enter the Sudoku to solve: (1-34)\n");
         if (scanf("%d", &inp) != 1) {
             while (getchar() != '\n');
-            printf("ERRORE (non è un numero)\n\n");
+            printf("[ERROR]: (it is not a number)\n\n");
             continue;
         }
-        if(inp>0&&inp<35)
+        if(inp>=0&&inp<35)
         {
             sprintf(filename, "%d", inp);
         parser(sdk,filename);
         stp_sdk(sdk);
         printf("\n\n═════════════════════════\n\n");     
-        printf("Vuoi risolvere questo sudoku? (y/n)\n");
+        printf("Do you want to solve this Sudoku? (y/n)\n");
 
         while (getchar() != '\n');
 
@@ -30,7 +30,7 @@ int main()
             break;
         }
         else
-            printf("ERRORE (inserisci un intero da 1 a 32)\n\n");
+            printf("[ERROR]: (Enter an integer from 1 to 32.)\n\n");
     }
 
 

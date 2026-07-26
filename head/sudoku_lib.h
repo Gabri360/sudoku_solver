@@ -1,6 +1,8 @@
 #ifndef SUDOKU_LIB
 #define SUDOKU_LIB
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 typedef struct
 {
