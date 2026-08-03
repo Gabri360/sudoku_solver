@@ -1,8 +1,12 @@
 #include "../head/sudoku_lib.h"
 
 
-void title() 
+
+void title()
 {
+#ifdef _WIN32
+  SetConsoleOutputCP(CP_UTF8);
+#endif
     printf("╔═══════════════════════════════════════════════════════╗\n");
     printf("║  ███████╗██╗   ██╗██████╗  ██████╗ ██╗  ██╗██╗   ██╗  ║\n");
     printf("║  ██╔════╝██║   ██║██╔══██╗██╔═══██╗██║ ██╔╝██║   ██║  ║\n");
@@ -25,10 +29,10 @@ void parser(int sdk[9][9], char filename[])
     char path[100];
     char line[100];
     snprintf(path, sizeof(path), "collection/puzzle%s.sdk", filename);
-    FILE *f = fopen(path, "r"); 
-    
+    FILE *f = fopen(path, "r");
+
     int i=0;
-    while (fgets(line, sizeof(line), f) != NULL) 
+    while (fgets(line, sizeof(line), f) != NULL)
     {
         if (isdigit((unsigned char)line[0])&&isdigit((unsigned char)line[8]))
         i++;
@@ -39,7 +43,7 @@ void parser(int sdk[9][9], char filename[])
         exit(-1);
     }
     i=0;
-    
+
     rewind(f);
     while(i<9)
     {
@@ -93,7 +97,7 @@ void copy(int a[9][9], int b[9][9])
             a[i][j]=b[i][j];
         }}
     }
-    
+
     void copy_sit(sit a[9][9][9], sit b[9][9][9])
     {
         for(int i=0;i<9;i++){
@@ -106,7 +110,7 @@ void copy(int a[9][9], int b[9][9])
                     a[i][j][k].pr=b[i][j][k].pr;
                 }}}
             }
-            
+
             int check_error(sit m[9][9][9])
             {
                 for(int i=0;i<9;i++)
@@ -128,14 +132,14 @@ void copy(int a[9][9], int b[9][9])
                 }
                 return 0;
             }
-            
-            
-            
-            void stp_sdk(int m[9][9]) 
+
+
+
+            void stp_sdk(int m[9][9])
             {
-                
+
                 for (int i = 0; i < 9; i++) {
-                    
+
                     // Riga superiore o separatori 3x3
                     if (i % 3 == 0) {
                         if (i == 0)
@@ -143,9 +147,9 @@ void copy(int a[9][9], int b[9][9])
                         else
                         printf("┣━━━━━━━╋━━━━━━━╋━━━━━━━┫\n");
                     }
-                    
+
                     for (int j = 0; j < 9; j++) {
-                        
+
                         // Separatori verticali
                         if (j % 3 == 0) {
                             if (j == 0)
@@ -153,16 +157,16 @@ void copy(int a[9][9], int b[9][9])
                             else
                             printf("┃ ");
                         }
-                        
+
                         if (m[i][j] == 0)
                         printf(". ");
                         else
                         printf("%d ", m[i][j]);
                     }
-                    
+
                     printf("┃\n");
                 }
-                
+
                 // Riga finale
                 printf("┗━━━━━━━┻━━━━━━━┻━━━━━━━┛\n");
             }

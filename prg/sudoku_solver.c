@@ -4,7 +4,7 @@ int main()
 {
     title();
     int inp;
-    char filename[2];
+    char filename[4];
     int sdk[9][9];
     while(1)
     {
@@ -19,14 +19,14 @@ int main()
             sprintf(filename, "%d", inp);
         parser(sdk,filename);
         stp_sdk(sdk);
-        printf("\n\n═════════════════════════\n\n");     
+        printf("\n\n═════════════════════════\n\n");
         printf("Do you want to solve this Sudoku? (y/n)\n");
 
         while (getchar() != '\n');
 
         int c = getchar();
 
-        if (c == '\n' || c == 'y') 
+        if (c == '\n' || c == 'y')
             break;
         }
         else
@@ -159,9 +159,9 @@ int main()
 
         if(ind==0)
         {
-            
+
             double maxval=0.0;
-            
+
             for(int i=0;i<9;i++){
             for(int j=0;j<9;j++){
             for(int k=0;k<9;k++)
@@ -207,7 +207,7 @@ int main()
             cp_index++;
         }
 
-        
+
         if(check_error(mat)==1)
         {
             for(int i=cp_index-1;i>0;i--)
@@ -226,5 +226,5 @@ int main()
     printf("═════════════════════════\n\n");
     stp_sdk(sdk);
 
-    return 0;  
+    return 0;
 }
